@@ -1,0 +1,985 @@
+fileFormatVersion: 2
+guid: d4858b8a799f3d04fb167124959c9e2b
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 16
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: simon_right_0
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 591
+        width: 40
+        height: 6
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_1
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 591
+        width: 43
+        height: 6
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_2
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 573
+        width: 18
+        height: 29
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_3
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 572
+        width: 12
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_4
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 573
+        width: 16
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_5
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 573
+        width: 12
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_6
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 571
+        width: 17
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_7
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 573
+        width: 12
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_8
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 573
+        width: 17
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_9
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 573
+        width: 12
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_10
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 573
+        width: 16
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_11
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 577
+        width: 16
+        height: 23
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_12
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 574
+        width: 16
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_13
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 542
+        width: 20
+        height: 33
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_14
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 543
+        width: 16
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_15
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 573
+        width: 32
+        height: 12
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_16
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 543
+        width: 16
+        height: 22
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_17
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 539
+        width: 48
+        height: 23
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_18
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 539
+        width: 34
+        height: 25
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_19
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 531
+        width: 31
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_20
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 539
+        width: 16
+        height: 23
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_21
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 534
+        width: 48
+        height: 30
+      alignment: 9
+      pivot: {x: .158363342, y: 0}
+    - name: simon_right_22
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 534
+        width: 33
+        height: 32
+      alignment: 9
+      pivot: {x: .744251609, y: -.0173721313}
+    - name: simon_right_23
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 534
+        width: 31
+        height: 32
+      alignment: 9
+      pivot: {x: .643454254, y: -.00868606567}
+    - name: simon_right_24
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 536
+        width: 16
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_25
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 503
+        width: 18
+        height: 33
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_26
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 501
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_27
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 501
+        width: 31
+        height: 33
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_28
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 496
+        width: 47
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_29
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 495
+        width: 34
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_30
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 494
+        width: 31
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_31
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 497
+        width: 16
+        height: 29
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_32
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 494
+        width: 49
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_33
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 493
+        width: 33
+        height: 33
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_34
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 493
+        width: 31
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_35
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 494
+        width: 17
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_36
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 454
+        width: 64
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_37
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 453
+        width: 64
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_38
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 453
+        width: 64
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_39
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 455
+        width: 33
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_40
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 455
+        width: 33
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_41
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 456
+        width: 33
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_42
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 457
+        width: 31
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_43
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 457
+        width: 31
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_44
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 457
+        width: 31
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_45
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 458
+        width: 16
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_46
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 423
+        width: 48
+        height: 23
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_47
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 424
+        width: 48
+        height: 23
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_48
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 424
+        width: 48
+        height: 23
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_49
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 424
+        width: 34
+        height: 25
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_50
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 424
+        width: 34
+        height: 25
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_51
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 425
+        width: 34
+        height: 25
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_52
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 420
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_53
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 419
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_54
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 418
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_55
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 427
+        width: 16
+        height: 23
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_56
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 380
+        width: 65
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_57
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 382
+        width: 66
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_58
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 381
+        width: 65
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_59
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 381
+        width: 33
+        height: 33
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_60
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 382
+        width: 33
+        height: 33
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_61
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 383
+        width: 33
+        height: 33
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_62
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 382
+        width: 31
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_63
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 382
+        width: 31
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_64
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 383
+        width: 31
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_65
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 385
+        width: 17
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_66
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 339
+        width: 63
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_67
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 341
+        width: 64
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_68
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 340
+        width: 63
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_69
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 341
+        width: 34
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_70
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 342
+        width: 34
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_71
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 343
+        width: 34
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_72
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 340
+        width: 31
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_73
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 340
+        width: 31
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_74
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 341
+        width: 31
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_75
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 344
+        width: 16
+        height: 29
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_76
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 228
+        width: 71
+        height: 100
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_77
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 305
+        width: 16
+        height: 23
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_78
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 304
+        width: 16
+        height: 23
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_79
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 304
+        width: 16
+        height: 23
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_80
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 302
+        width: 16
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_81
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 301
+        width: 16
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_82
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 301
+        width: 16
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_83
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 192
+        width: 203
+        height: 143
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_84
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 268
+        width: 17
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_85
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 267
+        width: 17
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_86
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 267
+        width: 17
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_87
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 267
+        width: 12
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_88
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 266
+        width: 12
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_89
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 265
+        width: 12
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_90
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 227
+        width: 16
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_91
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 226
+        width: 16
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_92
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 226
+        width: 16
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_93
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 227
+        width: 17
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_94
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 226
+        width: 17
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_95
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 226
+        width: 17
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_96
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 203
+        width: 5
+        height: 6
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_97
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 203
+        width: 22
+        height: 6
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_98
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 203
+        width: 6
+        height: 6
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_99
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 203
+        width: 36
+        height: 6
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_100
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 203
+        width: 26
+        height: 6
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_101
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 203
+        width: 19
+        height: 6
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_102
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 203
+        width: 24
+        height: 6
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_103
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 203
+        width: 39
+        height: 6
+      alignment: 7
+      pivot: {x: .5, y: 0}
+  spritePackingTag: 
+  userData: 
