@@ -201,12 +201,12 @@ TextureImporter:
     - name: simon_right_17
       rect:
         serializedVersion: 2
-        x: 327
-        y: 539
-        width: 48
-        height: 23
-      alignment: 7
-      pivot: {x: .5, y: 0}
+        x: 422
+        y: 531
+        width: 31
+        height: 32
+      alignment: 9
+      pivot: {x: .72176826, y: .247718811}
     - name: simon_right_18
       rect:
         serializedVersion: 2
@@ -214,17 +214,17 @@ TextureImporter:
         y: 539
         width: 34
         height: 25
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 9
+      pivot: {x: .754350543, y: .0150897689}
     - name: simon_right_19
       rect:
         serializedVersion: 2
-        x: 422
-        y: 531
-        width: 31
-        height: 32
-      alignment: 7
-      pivot: {x: .5, y: 0}
+        x: 327
+        y: 539
+        width: 48
+        height: 26
+      alignment: 9
+      pivot: {x: .177878067, y: .0198317301}
     - name: simon_right_20
       rect:
         serializedVersion: 2

@@ -241,17 +241,17 @@ TextureImporter:
         y: 531
         width: 31
         height: 32
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 9
+      pivot: {x: .248412102, y: .24354744}
     - name: Image2_22
       rect:
         serializedVersion: 2
         x: 385
         y: 539
-        width: 34
+        width: 32
         height: 25
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 9
+      pivot: {x: .236633301, y: .0213476568}
     - name: Image2_23
       rect:
         serializedVersion: 2
@@ -259,8 +259,8 @@ TextureImporter:
         y: 539
         width: 48
         height: 23
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 9
+      pivot: {x: .812933624, y: 0}
     - name: Image2_24
       rect:
         serializedVersion: 2

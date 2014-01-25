@@ -26,18 +26,32 @@ public class Simon : MonoBehaviour {
 		float h = Input.GetAxis ("Horizontal");
 
 		Vector2 vel = rigidbody2D.velocity;
-		if (grounded) {
+		if (grounded && !animator.GetBool ("whipping")) {
 			vel.x = h * speed;
 		}
-		rigidbody2D.velocity = vel;
 
 		if (Input.GetKeyDown(KeyCode.Z)) {
-			if (grounded) vel.y = jumpSpeed;
+			if (grounded && !animator.GetBool ("crouch")) {
+				vel.y = jumpSpeed;
+			}
+		}
+
+		if (Input.GetKey (KeyCode.DownArrow)) {
+			if (grounded) {
+				vel.x = 0;
+				animator.SetBool ("crouch", true);
+			}
+		}
+		else {
+			animator.SetBool ("crouch", false);
 		}
 
 		if (Input.GetKeyDown (KeyCode.X)) {
 			animator.SetBool("whipping", true);
 			whip_end = Time.time + whip_time;
+			if (grounded) {
+				vel.x = 0;
+			}
 		}
 
 		// ANIMATION CONTROL
@@ -58,8 +72,10 @@ public class Simon : MonoBehaviour {
 			animator.SetBool ("whipping", false);
 		}
 
+		animator.SetBool ("air", !grounded);
 
-		
+
+		rigidbody2D.velocity = vel;
 
 	}
 
