@@ -3,11 +3,11 @@ using System.Collections;
 
 public class HideCollisionBoxQuads : MonoBehaviour {
 
-	/*void Awake() {
+	void Awake() {
 		foreach (Transform t in transform) {
 			Destroy(t.gameObject);
 		}
 	}
-	*/
+
 
 }

@@ -7,6 +7,7 @@ public class Simon : MonoBehaviour {
 	public float		jumpAcc = 4;
 
 	public bool			grounded = true;
+	public bool			disable = false;
 
 	private Animator animator;
 	private AnimatorStateInfo anim_state;
@@ -21,6 +22,29 @@ public class Simon : MonoBehaviour {
 	}
 
 	void Update () { // Every Frame
+		if (disable) {
+			return;
+		}
+
+		// adjust collider to match crouch sprite
+		AnimatorStateInfo x = animator.GetCurrentAnimatorStateInfo(0);
+		BoxCollider2D collider = this.GetComponents<BoxCollider2D> ()[1];
+		if (x.IsName ("jump_left") || x.IsName ("jump_right")) {
+			Vector2 size = collider.size;
+			Vector2 center = collider.center;
+			size.y = 1.4f;
+			center.y = .7f;
+			collider.size = size;
+			collider.center = center;
+		}
+		else {
+			Vector2 size = collider.size;
+			size.y = 1.9f;
+			Vector2 center = collider.center;
+			center.y = 1;
+			collider.size = size;
+			collider.center = center;
+		}
 
 		// CONTROLS
 		float h = Input.GetAxis ("Horizontal");
@@ -77,6 +101,15 @@ public class Simon : MonoBehaviour {
 
 		rigidbody2D.velocity = vel;
 
+	}
+
+	public void next_level() {
+		this.disable = true;
+		Vector2 vel = rigidbody2D.velocity;
+		vel.x = 4;
+		vel.y = 0;
+		animator.Play ("walk_right");
+		rigidbody2D.velocity = vel;
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {

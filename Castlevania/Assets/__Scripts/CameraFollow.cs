@@ -8,7 +8,9 @@ public class CameraFollow : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 pos = poi.position + offset;
-		transform.position = pos;
+		Vector3 pos = poi.position;
+		Vector3 curpos = transform.position;
+		curpos.x = pos.x;
+		transform.position = curpos;
 	}
 }
