@@ -23,6 +23,11 @@ public class Simon : MonoBehaviour {
 
 	void Update () { // Every Frame
 		if (disable) {
+			Vector2 vel2 = rigidbody2D.velocity;
+			vel2.x = 4;
+			vel2.y = 0;
+			animator.Play ("walk_right");
+			rigidbody2D.velocity = vel2;
 			return;
 		}
 
@@ -118,6 +123,15 @@ public class Simon : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D other) {
 		grounded = false;
 	}
+
+	void whip_hit(GameObject hit_obj){
+		if (animator.GetBool ("whipping")){
+			hit_obj.SendMessage ("die");
+		}
+	}
+	
+
+
 }
 
 
