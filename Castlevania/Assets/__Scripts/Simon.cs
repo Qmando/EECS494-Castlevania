@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Simon : MonoBehaviour {
 	public float		speed = 8;
-	public float		jumpSpeed = 7;
+	public float		jumpSpeed = 25;
 	public float		jumpAcc = 4;
 
 	public bool			grounded = true;

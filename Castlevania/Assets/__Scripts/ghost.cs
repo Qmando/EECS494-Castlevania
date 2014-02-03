@@ -14,11 +14,13 @@ public class ghost : MonoBehaviour {
 		// Move left when simon gets close
 		float x = transform.position.x;
 		float simon_x = simon.transform.position.x;
-		if (x - simon_x < 10f) {
-			Vector2 loc = this.transform.position;
-			loc.x -= 4*Time.deltaTime;
-			this.transform.position = loc;
-		}
+		Vector2 loc = this.transform.position;
+		if (x - simon_x < 0)
+			loc.x += 4 * Time.deltaTime;
+		else
+			loc.x -= 4 * Time.deltaTime;
+		this.transform.position = loc;
+
 	}
 
 	void die(){
