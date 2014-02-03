@@ -126,7 +126,9 @@ public class Simon : MonoBehaviour {
 
 	void whip_hit(GameObject hit_obj){
 		if (animator.GetBool ("whipping")){
-			hit_obj.SendMessage ("die");
+			if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > .66) {
+				hit_obj.SendMessage ("die");
+			}
 		}
 	}
 	
