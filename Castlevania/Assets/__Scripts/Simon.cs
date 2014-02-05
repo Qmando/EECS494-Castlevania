@@ -111,7 +111,7 @@ public class Simon : MonoBehaviour {
 	public void next_level() {
 		this.disable = true;
 		Vector2 vel = rigidbody2D.velocity;
-		vel.x = 4;
+		vel.x = 3;
 		vel.y = 0;
 		animator.Play ("walk_right");
 		rigidbody2D.velocity = vel;
@@ -125,10 +125,13 @@ public class Simon : MonoBehaviour {
 	}
 
 	void whip_hit(GameObject hit_obj){
-		if (animator.GetBool ("whipping")){
-			if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > .66) {
+		// For weird reasons, we check both whether the animation is > 2/3 done
+		// AND check to see we are at least half way through the "whip time"
+		if (animator.GetBool ("whipping") 
+			&& animator.GetCurrentAnimatorStateInfo(0).normalizedTime > .66
+		    && Time.time > whip_end-(whip_time/2)) { 
 				hit_obj.SendMessage ("die");
-			}
+
 		}
 	}
 	
