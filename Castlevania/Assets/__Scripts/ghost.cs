@@ -3,23 +3,25 @@ using System.Collections;
 
 public class ghost : MonoBehaviour {
 	public GameObject simon;
+	public int moving;
 
 	// Use this for initialization
 	void Start () {
 		simon = GameObject.Find ("Simon");
+		float simon_x = simon.transform.position.x;
+		if (transform.position.x - simon_x < 0)
+			moving = 4;
+		else
+			moving =-4;
+
+	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		// Move left when simon gets close
-		float x = transform.position.x;
-		float simon_x = simon.transform.position.x;
-		Vector2 loc = this.transform.position;
-		if (x - simon_x < 0)
-			loc.x += 4 * Time.deltaTime;
-		else
-			loc.x -= 4 * Time.deltaTime;
-		this.transform.position = loc;
+		Vector2 vel = new Vector2 (0, 0);
+		vel.x = moving;
+		rigidbody2D.velocity = vel;
 
 	}
 

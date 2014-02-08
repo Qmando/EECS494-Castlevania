@@ -19,6 +19,7 @@ public class Simon : MonoBehaviour {
 	public bool on_stairs = false;
 	public bool gettingOffStairs = false;
 	public bool gettingOnStairs = false;
+	public int whip_dir=0;
 	
 	// Use this for initialization
 	void Start()
@@ -31,6 +32,7 @@ public class Simon : MonoBehaviour {
 		on_stair_info.pos.x = 0;
 		on_stair_info.pos.y = 0;
 		on_stair_info.dir = 0;
+		Physics2D.IgnoreLayerCollision (LayerMask.NameToLayer ("simon"), LayerMask.NameToLayer ("ghost"));
 	}
 
 	void Update () { // Every Frame
@@ -106,6 +108,7 @@ public class Simon : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.X)) {
 			animator.SetBool("whipping", true);
 			whip_end = Time.time + whip_time;
+			whip_dir = animator.GetInteger ("direction_x");
 			if (grounded) {
 				vel.x = 0;
 			}
@@ -261,7 +264,7 @@ public class Simon : MonoBehaviour {
 			vel.x=2;
 			vel.y=2;
 		}
-		else if (cur_stairs.dir == 1 && transform.position.x < cur_stairs.pos.x+1.3) {
+		else if (cur_stairs.dir == 1 && transform.position.x < cur_stairs.pos.x+1) {
 			vel.x=4;
 		}
 		else {
@@ -289,14 +292,27 @@ public class Simon : MonoBehaviour {
 		grounded = false;
 	}
 
-	void whip_hit(GameObject hit_obj){
+	void whip_hit_r(GameObject hit_obj){
 		// For weird reasons, we check both whether the animation is > 2/3 done
 		// AND check to see we are at least half way through the "whip time"
 		if (animator.GetBool ("whipping") 
 			&& animator.GetCurrentAnimatorStateInfo(0).normalizedTime > .66
-		    && Time.time > whip_end-(whip_time/2)) { 
+		    && Time.time > whip_end-(whip_time/2)
+		    && whip_dir == 0) { 
 				hit_obj.SendMessage ("die");
 
+		}
+	}
+
+	void whip_hit_l(GameObject hit_obj){
+		// For weird reasons, we check both whether the animation is > 2/3 done
+		// AND check to see we are at least half way through the "whip time"
+		if (animator.GetBool ("whipping") 
+		    && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > .66
+		    && Time.time > whip_end-(whip_time/2)
+		    && whip_dir == 1) { 
+				hit_obj.SendMessage ("die");
+			
 		}
 	}
 
@@ -311,6 +327,13 @@ public class Simon : MonoBehaviour {
 		pos.y = 0;
 		cur_stairs.pos = pos;
 		print ("exiting stairs");
+	}
+
+	void OnCollisionEnter2D(Collision2D collider){
+		GameObject collided_with = collider.gameObject;
+		if (collided_with.name.StartsWith ("ghost") ) {
+			print("HURT!");
+		}
 	}
 
 
