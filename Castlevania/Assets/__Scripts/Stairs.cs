@@ -9,10 +9,11 @@ public struct stair_info {
 public class Stairs : MonoBehaviour {
 
 	public stair_info info;
+	public int stair_dir;
 
 	void Start(){
 		info.pos = transform.position;
-		info.dir = 0;
+		info.dir = stair_dir;
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
@@ -24,7 +25,7 @@ public class Stairs : MonoBehaviour {
 
 	void OnTriggerExit2D(Collider2D other) {
 		if (other.gameObject.name == "Simon") {
-			other.gameObject.SendMessage ("not_near_stairs");
+			other.gameObject.SendMessage ("not_near_stairs", info);
 		}
 	}
 }

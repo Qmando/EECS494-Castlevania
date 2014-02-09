@@ -297,33 +297,33 @@ TextureImporter:
         height: 33
       alignment: 7
       pivot: {x: .5, y: 0}
-    - name: simon_right_28
+    - name: simon_right_28c
       rect:
         serializedVersion: 2
         x: 328
         y: 496
         width: 47
         height: 30
-      alignment: 7
-      pivot: {x: .5, y: 0}
-    - name: simon_right_29
+      alignment: 9
+      pivot: {x: .144930571, y: .0171173103}
+    - name: simon_right_28b
       rect:
         serializedVersion: 2
         x: 380
         y: 495
         width: 34
         height: 31
-      alignment: 7
-      pivot: {x: .5, y: 0}
-    - name: simon_right_30
+      alignment: 9
+      pivot: {x: .718986988, y: .0165651385}
+    - name: simon_right_28a
       rect:
         serializedVersion: 2
         x: 421
         y: 494
         width: 31
         height: 32
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 9
+      pivot: {x: .70705092, y: .12034893}
     - name: simon_right_31
       rect:
         serializedVersion: 2

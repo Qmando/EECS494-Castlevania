@@ -32,7 +32,6 @@ public class Simon : MonoBehaviour {
 		on_stair_info.pos.x = 0;
 		on_stair_info.pos.y = 0;
 		on_stair_info.dir = 0;
-		Physics2D.IgnoreLayerCollision (LayerMask.NameToLayer ("simon"), LayerMask.NameToLayer ("ghost"));
 	}
 
 	void Update () { // Every Frame
@@ -117,54 +116,101 @@ public class Simon : MonoBehaviour {
 		// Get on stairs if we are close
 		if (Input.GetKeyDown (KeyCode.UpArrow)) {
 			// If we are on the ground by the bottom of a staircase
-			if (cur_stairs.pos.x != 0 && cur_stairs.dir == 0 && !on_stairs) {
+			if (cur_stairs.pos.x != 0 
+			    && (cur_stairs.dir == 0 || cur_stairs.dir == 3)
+			    && !on_stairs) {
 				gettingOnStairs = true;
 			}
 		}
 		if (Input.GetKeyDown (KeyCode.DownArrow)){
-			if (cur_stairs.pos.x != 0 && cur_stairs.dir == 1 && !on_stairs) {
+			if (cur_stairs.pos.x != 0 
+			    && (cur_stairs.dir == 1 || cur_stairs.dir == 2)
+			    && !on_stairs) {
 				gettingOnStairs=true;
 			}
 		}
 
 		// Stairs movement
 		if (on_stairs){
-			if (Input.GetKey (KeyCode.UpArrow) 
-			    || Input.GetKey (KeyCode.RightArrow)) {
-				if (cur_stairs.pos.x != 0 && cur_stairs.dir == 1) {
-					if (transform.position.y < cur_stairs.pos.y-.2) {
+			if (on_stair_info.dir == 0 || on_stair_info.dir == 1) {
+				// We are on a up/right stair
+				if (Input.GetKey (KeyCode.UpArrow) 
+				    || Input.GetKey (KeyCode.RightArrow)) {
+					if (cur_stairs.pos.x != 0 && cur_stairs.dir == 1) {
+						if (transform.position.y < cur_stairs.pos.y-.2) {
+							vel.x = 2;
+							vel.y = 2;
+						}
+						else {
+							gettingOffStairs = true;
+						}
+					}
+					else {
 						vel.x = 2;
 						vel.y = 2;
 					}
-					else {
-						gettingOffStairs = true;
+				}
+				else if (Input.GetKey(KeyCode.DownArrow) 
+				    	|| Input.GetKey(KeyCode.LeftArrow)) {
+					if (cur_stairs.pos.x != 0 && cur_stairs.dir == 0){
+						if (transform.position.y > cur_stairs.pos.y+.2) {
+							vel.x=-2;
+							vel.y=-2;
+						}
+						else {
+							gettingOffStairs = true;
+						}
 					}
-				}
-				else {
-					vel.x = 2;
-					vel.y = 2;
-				}
-			}
-			else if (Input.GetKey(KeyCode.DownArrow) 
-			    	|| Input.GetKey(KeyCode.LeftArrow)) {
-				if (cur_stairs.pos.x != 0 && cur_stairs.dir == 0){
-					if (transform.position.y > cur_stairs.pos.y+.2) {
+					else {
 						vel.x=-2;
 						vel.y=-2;
 					}
-					else {
-						gettingOffStairs = true;
-					}
+
 				}
 				else {
-					vel.x=-2;
-					vel.y=-2;
+					vel.x=0;
+					vel.y=0;
 				}
-
 			}
 			else {
-				vel.x=0;
-				vel.y=0;
+				// We are on a down/left stair
+				if (Input.GetKey (KeyCode.UpArrow) 
+				    || Input.GetKey (KeyCode.LeftArrow)) {
+					if (cur_stairs.pos.x != 0 && cur_stairs.dir == 2) {
+						if (transform.position.y < cur_stairs.pos.y-.2) {
+							vel.x = -2;
+							vel.y = 2;
+						}
+						else {
+							gettingOffStairs = true;
+						}
+					}
+					else {
+						vel.x = -2;
+						vel.y = 2;
+					}
+				}
+				else if (Input.GetKey(KeyCode.DownArrow) 
+				         || Input.GetKey(KeyCode.RightArrow)) {
+					if (cur_stairs.pos.x != 0 && cur_stairs.dir == 3){
+						if (transform.position.y > cur_stairs.pos.y+.2) {
+							vel.x=2;
+							vel.y=-2;
+						}
+						else {
+							gettingOffStairs = true;
+						}
+					}
+					else {
+						vel.x=2;
+						vel.y=-2;
+					}
+					
+				}
+				else {
+					vel.x=0;
+					vel.y=0;
+				}
 			}
 		}
 		rigidbody2D.velocity = vel;
@@ -235,12 +281,27 @@ public class Simon : MonoBehaviour {
 				vel.y=-2;
 				vel.x=-2;
 			}
+			else if (cur_stairs.dir == 2 && transform.position.y > cur_stairs.pos.y-.35) {
+				vel.y=-2;
+				vel.x=2;
+			}
+			else if (cur_stairs.dir == 3 && transform.position.y < cur_stairs.pos.y+.35) {
+				vel.y=2;
+				vel.x=-2;
+			}
 			else {
 				// Get on!
 				vel.y=0;
 				vel.x=0;
 				on_stair_info = cur_stairs;
 				gettingOnStairs = false;
+				if (cur_stairs.dir == 0 || cur_stairs.dir == 1) {
+					animator.SetBool("stairdir", false);
+				}
+				else {
+					animator.SetBool("stairdir", true);
+				}
+				animator.SetTrigger ("getonstairs");
 			}
 		}
 		
@@ -267,9 +328,17 @@ public class Simon : MonoBehaviour {
 		else if (cur_stairs.dir == 1 && transform.position.x < cur_stairs.pos.x+1) {
 			vel.x=4;
 		}
+		else if (cur_stairs.dir == 2 && transform.position.y < cur_stairs.pos.y){
+			vel.x=-2;
+			vel.y=2;
+		}
+		else if (cur_stairs.dir == 2 && transform.position.x > cur_stairs.pos.x-1) {
+			vel.x=-4;
+		} 
 		else {
 			gettingOffStairs = false;
 			on_stairs = false;
+			animator.SetTrigger ("getoffstairs");
 			rigidbody2D.gravityScale = 8;
 		}
 		return vel;
@@ -321,12 +390,18 @@ public class Simon : MonoBehaviour {
 		this.cur_stairs = info;
 	}
 
-	void not_near_stairs() {
-		Vector2 pos;
-		pos.x = 0;
-		pos.y = 0;
-		cur_stairs.pos = pos;
-		print ("exiting stairs");
+	void not_near_stairs(stair_info info) {
+		// If we overlap stairs, dont "exit" the new stairs
+		if (this.cur_stairs.pos.x == info.pos.x){
+			print("leaving stairs");
+			Vector2 pos;
+			pos.x = 0;
+			pos.y = 0;
+			cur_stairs.pos = pos;
+		}
+		else {
+			print ("overlapping stairs");
+		}
 	}
 
 	void OnCollisionEnter2D(Collision2D collider){
