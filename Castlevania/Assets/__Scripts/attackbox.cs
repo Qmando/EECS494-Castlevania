@@ -16,13 +16,12 @@ public class attackbox : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D collider) {
 		GameObject collided_with = collider.gameObject;
-		if (collided_with.name.StartsWith("ghost")) {
-			if (right){
+		if (collided_with.tag == "killable"){
+			if (right) {
 				simon.SendMessage ("whip_hit_r", collided_with);
-			}
-			else {
+			} else {
 				simon.SendMessage ("whip_hit_l", collided_with);
 			}
-		}
+		} 
 	}
 }
