@@ -424,7 +424,7 @@ public class Simon : MonoBehaviour {
 		}
 	}
 
-	void increment_hearts(int amt)
+	void increase_hearts(int amt)
 	{
 		hearts += amt;
 	}
