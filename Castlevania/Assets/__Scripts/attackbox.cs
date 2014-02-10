@@ -1,4 +1,4 @@
-﻿﻿using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -6,7 +6,7 @@ public class attackbox : MonoBehaviour {
 	public GameObject simon;
 	public GameObject thisobj;
 	public bool right;
-	public List<GameObject> in_trigger;
+	public List<int> in_trigger;
 	// Use this for initialization
 	void Start () {
 		simon = GameObject.Find ("Simon");
@@ -25,9 +25,9 @@ public class attackbox : MonoBehaviour {
 		
 		if (collided_with.tag == "killable"){
 			//print ("Killing " + collided_with.name);
-			if (!in_trigger.Contains (collided_with)) {
+			if (!in_trigger.Contains (collided_with.GetInstanceID())) {
 				print ("Adding " + collided_with.name);
-				in_trigger.Add (collided_with);
+				in_trigger.Add (collided_with.GetInstanceID());
 			}
 		}
 
@@ -36,17 +36,21 @@ public class attackbox : MonoBehaviour {
 		GameObject collided_with = collider.gameObject;
 		
 		if (collided_with.tag == "killable"){
-			if (in_trigger.Contains (collided_with)) {
+			if (in_trigger.Contains (collided_with.GetInstanceID())) {
 				print ("Removing " + collided_with.name);
-				in_trigger.Remove (collided_with);
+				in_trigger.Remove (collided_with.GetInstanceID());
 			}
 		}
 	}
 
 	void hit_stuff() {
-		foreach (GameObject obj in in_trigger) {
-			print ("Killing " + obj.name);
-			obj.SendMessage("die");
+		foreach (int obj_id in in_trigger) {
+			foreach (GameObject obj in GameObject.FindGameObjectsWithTag("killable")){
+				if (obj.GetInstanceID() == obj_id){
+					print ("Killing " + obj.name);
+					obj.SendMessage("die");
+				}
+			}
 		}
 		in_trigger.Clear ();
 	}

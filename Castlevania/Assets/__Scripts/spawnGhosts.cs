@@ -11,14 +11,14 @@ public class spawnGhosts : MonoBehaviour {
 		InvokeRepeating ("instantiate_ghosts", 0.0f, 5.0f);
 	}
 	
-	void instatiate_ghosts() {
+	void instantiate_ghosts() {
 		Object ghost = Resources.Load("ghost");
 		Vector3 pos = new Vector3 (simon.transform.position.x, 0.2912f, 0.0f);
 		pos.x += 10;
 		Instantiate (ghost, pos, Quaternion.identity);
-		pos.x += 1;
+		pos.x += 5;
 		Instantiate (ghost, pos, Quaternion.identity);
-		pos.x += 1;
+		pos.x += 5;
 		Instantiate (ghost, pos, Quaternion.identity);
 	}
 }
