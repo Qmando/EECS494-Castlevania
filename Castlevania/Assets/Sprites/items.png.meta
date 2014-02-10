@@ -54,5 +54,41 @@ TextureImporter:
         height: 10
       alignment: 0
       pivot: {x: .5, y: .5}
+    - name: small_heart
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 230
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: dagger
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 228
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: whip_upgrade
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 217
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: pot_roast
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 107
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: .5, y: .5}
   spritePackingTag: 
   userData: 

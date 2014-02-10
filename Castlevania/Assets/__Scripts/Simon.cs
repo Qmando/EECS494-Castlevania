@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using System;
 
@@ -10,6 +11,7 @@ public class Simon : MonoBehaviour {
 	public bool		grounded = true;
 	public bool		disable = false;
 
+	public int		health = 10;
 	public int		hearts = 0;
 
 	private Animator animator;
@@ -419,9 +421,20 @@ public class Simon : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collider){
 		GameObject collided_with = collider.gameObject;
-		if (collided_with.name.StartsWith ("ghost") ) {
-			print("HURT!");
+		if (collided_with.layer != 0)
+			print ("Collided with object in layer " + collided_with.layer.ToString ());
+		if (collided_with.layer == 9) {
+			print ("Starting damage coroutine");
+			StartCoroutine ("take_damage");
 		}
+	}
+
+	IEnumerator take_damage(){
+		health -= 2;
+		yield return new WaitForSeconds(2);
+		Vector3 pos = transform.position;
+		pos.x -= 2;
+		transform.position = pos;
 	}
 
 	void increase_hearts(int amt)
@@ -429,21 +442,3 @@ public class Simon : MonoBehaviour {
 		hearts += amt;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
