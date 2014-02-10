@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 using System;
 
 public class Simon : MonoBehaviour {
@@ -20,6 +20,9 @@ public class Simon : MonoBehaviour {
 	public bool gettingOffStairs = false;
 	public bool gettingOnStairs = false;
 	public int whip_dir=0;
+	public List<GameObject> in_trigger;
+	public GameObject right_box;
+	public GameObject left_box;
 	
 	// Use this for initialization
 	void Start()
@@ -217,6 +220,14 @@ public class Simon : MonoBehaviour {
 
 		updateAnimation ();
 
+		if (animator.GetBool ("whipping") 
+		    && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > .66
+		    && Time.time > whip_end-(whip_time/2)) {
+			if (whip_dir == 0)
+				right_box.SendMessage ("hit_stuff");
+			else
+				left_box.SendMessage ("hit_stuff");
+		}
 
 
 

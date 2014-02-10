@@ -1,0 +1,706 @@
+fileFormatVersion: 2
+guid: 790045d9bf80dbc47972c43f44a0ba95
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 16
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: enemies_right_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 283
+        width: 16
+        height: 15
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 283
+        width: 15
+        height: 16
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 285
+        width: 32
+        height: 13
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_3
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 283
+        width: 30
+        height: 16
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_4
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 283
+        width: 28
+        height: 16
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_5
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 283
+        width: 24
+        height: 15
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_6
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 278
+        width: 16
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_7
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 278
+        width: 16
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_8
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 259
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 258
+        width: 15
+        height: 16
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_10
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 257
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_11
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 259
+        width: 16
+        height: 10
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_12
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 257
+        width: 16
+        height: 14
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_13
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 257
+        width: 12
+        height: 14
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_14
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 234
+        width: 16
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_15
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 234
+        width: 14
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_16
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 234
+        width: 16
+        height: 30
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_17
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 234
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_18
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 234
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_19
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 231
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_20
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 233
+        width: 16
+        height: 10
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_21
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 231
+        width: 16
+        height: 14
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_22
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 231
+        width: 12
+        height: 14
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_23
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 198
+        width: 15
+        height: 15
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_24
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 197
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_25
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 198
+        width: 15
+        height: 15
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_26
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 199
+        width: 16
+        height: 12
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_27
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 186
+        width: 22
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_28
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 186
+        width: 22
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_29
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 185
+        width: 16
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_30
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 185
+        width: 16
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_31
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 185
+        width: 16
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_32
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 149
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_33
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 154
+        width: 32
+        height: 23
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_34
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 149
+        width: 15
+        height: 7
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_35
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 148
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_36
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 145
+        width: 16
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_37
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 146
+        width: 16
+        height: 31
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_38
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 150
+        width: 6
+        height: 16
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_39
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 152
+        width: 15
+        height: 13
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_40
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 113
+        width: 8
+        height: 16
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_41
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 116
+        width: 16
+        height: 15
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_42
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 113
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_43
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 109
+        width: 16
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_44
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 108
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_45
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 105
+        width: 16
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_46
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 106
+        width: 16
+        height: 31
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_47
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 110
+        width: 6
+        height: 16
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_48
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 112
+        width: 15
+        height: 13
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_49
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 109
+        width: 15
+        height: 7
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_50
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 84
+        width: 8
+        height: 15
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_51
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 84
+        width: 16
+        height: 13
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_52
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 85
+        width: 8
+        height: 10
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_53
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 86
+        width: 5
+        height: 8
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_54
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 86
+        width: 8
+        height: 8
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_55
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 86
+        width: 5
+        height: 6
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_56
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 86
+        width: 6
+        height: 8
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_57
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 91
+        width: 5
+        height: 8
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_58
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 87
+        width: 7
+        height: 6
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_59
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 87
+        width: 13
+        height: 5
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_60
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 87
+        width: 5
+        height: 8
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_61
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 87
+        width: 5
+        height: 6
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_62
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 87
+        width: 5
+        height: 6
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_63
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 85
+        width: 7
+        height: 10
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_64
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 87
+        width: 8
+        height: 8
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_65
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 87
+        width: 7
+        height: 8
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_66
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 87
+        width: 10
+        height: 8
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_67
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 85
+        width: 8
+        height: 10
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_68
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 87
+        width: 9
+        height: 6
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_69
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 87
+        width: 5
+        height: 8
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_70
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 86
+        width: 13
+        height: 5
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_71
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 85
+        width: 7
+        height: 5
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: enemies_right_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4
+        width: 264
+        height: 73
+      alignment: 7
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 
