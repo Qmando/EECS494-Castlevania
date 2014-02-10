@@ -26,6 +26,7 @@ public class attackbox : MonoBehaviour {
 		if (collided_with.tag == "killable"){
 			//print ("Killing " + collided_with.name);
 			if (!in_trigger.Contains (collided_with)) {
+				print ("Adding " + collided_with.name);
 				in_trigger.Add (collided_with);
 			}
 		}
@@ -36,6 +37,7 @@ public class attackbox : MonoBehaviour {
 		
 		if (collided_with.tag == "killable"){
 			if (in_trigger.Contains (collided_with)) {
+				print ("Removing " + collided_with.name);
 				in_trigger.Remove (collided_with);
 			}
 		}
@@ -43,6 +45,7 @@ public class attackbox : MonoBehaviour {
 
 	void hit_stuff() {
 		foreach (GameObject obj in in_trigger) {
+			print ("Killing " + obj.name);
 			obj.SendMessage("die");
 		}
 		in_trigger.Clear ();

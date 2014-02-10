@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System;
 
 public class Simon : MonoBehaviour {
-	public float		speed = 8;
-	public float		jumpSpeed = 25;
-	public float		jumpAcc = 4;
+	public float	speed = 8;
+	public float	jumpSpeed = 25;
+	public float	jumpAcc = 4;
 
-	public bool			grounded = true;
-	public bool			disable = false;
+	public bool		grounded = true;
+	public bool		disable = false;
+
+	public int		hearts = 0;
 
 	private Animator animator;
 	private AnimatorStateInfo anim_state;
@@ -350,7 +352,7 @@ public class Simon : MonoBehaviour {
 			gettingOffStairs = false;
 			on_stairs = false;
 			animator.SetTrigger ("getoffstairs");
-			rigidbody2D.gravityScale = 8;
+			rigidbody2D.gravityScale = 4;
 		}
 		return vel;
 	}
@@ -422,7 +424,10 @@ public class Simon : MonoBehaviour {
 		}
 	}
 
-
+	void increment_hearts(int amt)
+	{
+		hearts += amt;
+	}
 }
 
 
