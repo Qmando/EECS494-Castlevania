@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
 
 
 public class candle : MonoBehaviour {
@@ -8,9 +9,15 @@ public class candle : MonoBehaviour {
 	GameObject drop;
 
 	void Start () {
-		collectables = GameObject.FindGameObjectsWithTag("collectable");
+		collectables = Resources.LoadAll("Collectables",typeof(GameObject)).Cast<GameObject>().ToArray();
+		print ("Collectables start");
+		foreach (GameObject c in collectables){
+			print (c.name);
+		}
+		print ("Collectables end");
 		int i = Random.Range (0, collectables.Length - 1);
 		drop = collectables [i];
+		print (drop.name);
 	}
 
 	void die(){

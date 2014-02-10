@@ -24,7 +24,7 @@ public class attackbox : MonoBehaviour {
 		GameObject collided_with = collider.gameObject;
 		
 		if (collided_with.tag == "killable"){
-			print ("Killing " + collided_with.name);
+			//print ("Killing " + collided_with.name);
 			if (!in_trigger.Contains (collided_with)) {
 				in_trigger.Add (collided_with);
 			}

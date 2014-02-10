@@ -13,8 +13,7 @@ public class ghost : MonoBehaviour {
 			moving = 4;
 		else
 			moving =-4;
-
-	
+			
 	}
 	
 	// Update is called once per frame

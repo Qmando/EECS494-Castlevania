@@ -27,11 +27,11 @@ public class dog : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (rigidbody2D.velocity.x > 0)
+		/*if (rigidbody2D.velocity.x > 0)
 			anim.SetInteger("direction", 0);
 		else
 			anim.SetInteger("direction", 1);
-
+*/
 		Vector2 vel = new Vector2 (0, 0);
 		if (idle && simon.transform.position.x > trigger_x
 		    && transform.position.x > trigger_x) {
