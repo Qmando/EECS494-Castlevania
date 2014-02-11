@@ -11,18 +11,22 @@ public class Simon : MonoBehaviour {
 	public bool		grounded = true;
 	public bool		disable = false;
 
-	public int		health = 10;
-	public int		hearts = 0;
+	public int			health = 10;
+	public int			hearts = 0;
+	public GameObject	sub_weapon;
 
 	private Animator animator;
 	private AnimatorStateInfo anim_state;
+
 	public float whip_time = .5f;
 	public float whip_end = 0;
+
 	public stair_info cur_stairs;
 	public stair_info on_stair_info;
 	public bool on_stairs = false;
 	public bool gettingOffStairs = false;
 	public bool gettingOnStairs = false;
+
 	public int whip_dir=0;
 	public List<GameObject> in_trigger;
 	public GameObject right_box;
@@ -359,7 +363,7 @@ public class Simon : MonoBehaviour {
 			gettingOffStairs = false;
 			on_stairs = false;
 			animator.SetTrigger ("getoffstairs");
-			rigidbody2D.gravityScale = 8;
+			rigidbody2D.gravityScale = 4;
 		}
 		return vel;
 	}
@@ -456,8 +460,11 @@ public class Simon : MonoBehaviour {
 
 	}
 
-	void increase_hearts(int amt)
-	{
+	void increase_hearts(int amt){
 		hearts += amt;
+	}
+
+	void equip_subweapon(GameObject sw){
+		sub_weapon = sw;
 	}
 }

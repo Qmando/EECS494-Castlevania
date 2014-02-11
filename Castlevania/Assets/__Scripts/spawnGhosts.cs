@@ -16,9 +16,9 @@ public class spawnGhosts : MonoBehaviour {
 		Vector3 pos = new Vector3 (simon.transform.position.x, 0.2912f, 0.0f);
 		pos.x += 10;
 		Instantiate (ghost, pos, Quaternion.identity);
-		pos.x += 5;
+		pos.x += 2;
 		Instantiate (ghost, pos, Quaternion.identity);
-		pos.x += 5;
+		pos.x += 3;
 		Instantiate (ghost, pos, Quaternion.identity);
 	}
 }

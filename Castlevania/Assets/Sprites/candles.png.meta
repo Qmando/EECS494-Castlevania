@@ -72,5 +72,14 @@ TextureImporter:
         height: 15
       alignment: 0
       pivot: {x: .5, y: .5}
+    - name: lamp
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 49
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
   spritePackingTag: 
   userData: 
