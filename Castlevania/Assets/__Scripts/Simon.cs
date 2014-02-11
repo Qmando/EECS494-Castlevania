@@ -285,22 +285,24 @@ public class Simon : MonoBehaviour {
 		Vector2 vel = new Vector2 (0, 0);
 		rigidbody2D.gravityScale = 0;
 		// If we are within a tolerable distance to the center of the stairs
-		if (.05 > Math.Abs(cur_stairs.pos.x-transform.position.x) || on_stairs) {
+		if ((.05 > Math.Abs(cur_stairs.pos.x-transform.position.x) && grounded) 
+		    				|| on_stairs) {
 			on_stairs = true;
 			// Walk up onto the stairs a little bit
-			if (on_stair_info.dir == 0 && transform.position.y < on_stair_info.pos.y+.35) {
+			if (cur_stairs.dir == 0 && cur_stairs.pos.x != 0
+			    && transform.position.y < cur_stairs.pos.y+.35) {
 				vel.y=2;
 				vel.x=2;
 			}
-			else if (on_stair_info.dir == 1 && transform.position.y > on_stair_info.pos.y-.35) {
+			else if (cur_stairs.dir == 1 && transform.position.y > cur_stairs.pos.y-.35) {
 				vel.y=-2;
 				vel.x=-2;
 			}
-			else if (on_stair_info.dir == 2 && transform.position.y > on_stair_info.pos.y-.35) {
+			else if (cur_stairs.dir == 2 && transform.position.y > cur_stairs.pos.y-.35) {
 				vel.y=-2;
 				vel.x=2;
 			}
-			else if (on_stair_info.dir == 3 && transform.position.y < on_stair_info.pos.y+.35) {
+			else if (cur_stairs.dir == 3 && transform.position.y < cur_stairs.pos.y+.35) {
 				vel.y=2;
 				vel.x=-2;
 			}
@@ -370,10 +372,12 @@ public class Simon : MonoBehaviour {
 	}
 
 	void OnTriggerStay2D(Collider2D other) {
-		grounded = true;
+		if (other.gameObject.tag == "platform")
+			grounded = true;
 	}
 	void OnTriggerExit2D(Collider2D other) {
-		grounded = false;
+		if (other.gameObject.tag == "platform")
+			grounded = false;
 	}
 
 	void whip_hit_r(GameObject hit_obj){
@@ -401,7 +405,7 @@ public class Simon : MonoBehaviour {
 	}
 
 	void near_stairs(stair_info info) {
-		print ("NEW STAIRS");
+
 		this.cur_stairs = info;
 	}
 

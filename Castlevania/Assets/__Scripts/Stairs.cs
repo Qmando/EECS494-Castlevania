@@ -16,8 +16,7 @@ public class Stairs : MonoBehaviour {
 		info.dir = stair_dir;
 	}
 
-	void OnTriggerEnter2D(Collider2D other) {
-		print (other.gameObject.name);
+	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.name == "Simon") {
 			other.gameObject.SendMessage ("near_stairs", info);
 		}
