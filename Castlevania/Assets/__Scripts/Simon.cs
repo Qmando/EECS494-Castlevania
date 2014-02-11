@@ -27,6 +27,7 @@ public class Simon : MonoBehaviour {
 	public List<GameObject> in_trigger;
 	public GameObject right_box;
 	public GameObject left_box;
+	public float next_damage=0;
 	
 	// Use this for initialization
 	void Start()
@@ -283,11 +284,12 @@ public class Simon : MonoBehaviour {
 
 	Vector2 getOnStairs(){
 		Vector2 vel = new Vector2 (0, 0);
-		rigidbody2D.gravityScale = 0;
+
 		// If we are within a tolerable distance to the center of the stairs
 		if ((.05 > Math.Abs(cur_stairs.pos.x-transform.position.x) && grounded) 
 		    				|| on_stairs) {
 			on_stairs = true;
+			rigidbody2D.gravityScale = 0;
 			// Walk up onto the stairs a little bit
 			if (cur_stairs.dir == 0 && cur_stairs.pos.x != 0
 			    && transform.position.y < cur_stairs.pos.y+.35) {
@@ -311,6 +313,7 @@ public class Simon : MonoBehaviour {
 				vel.y=0;
 				vel.x=0;
 				on_stair_info = cur_stairs;
+
 				gettingOnStairs = false;
 				if (cur_stairs.dir == 0 || cur_stairs.dir == 1) {
 					animator.SetBool("stairdir", false);
@@ -356,7 +359,7 @@ public class Simon : MonoBehaviour {
 			gettingOffStairs = false;
 			on_stairs = false;
 			animator.SetTrigger ("getoffstairs");
-			rigidbody2D.gravityScale = 4;
+			rigidbody2D.gravityScale = 8;
 		}
 		return vel;
 	}
@@ -423,22 +426,34 @@ public class Simon : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter2D(Collision2D collider){
+	void hitby(Collider2D collider){
+		// Collectable items
+		if (collider.gameObject.tag == "collectable"){
+			if (collider.gameObject.name == "heart") {
+				increase_hearts(2); // Fix this to get heart_amnt
+			}
+			Destroy( collider.gameObject );
+		}
+
+		// Enemies!
+		if (Time.time < next_damage)
+			return;
 		GameObject collided_with = collider.gameObject;
 		if (collided_with.layer != 0)
 			print ("Collided with object in layer " + collided_with.layer.ToString ());
 		if (collided_with.layer == 9) {
 			print ("Starting damage coroutine");
-			StartCoroutine ("take_damage");
+			take_damage();
 		}
 	}
 
-	IEnumerator take_damage(){
+	void take_damage(){
 		health -= 2;
-		yield return new WaitForSeconds(2);
-		Vector3 pos = transform.position;
-		pos.x -= 2;
+		next_damage = Time.time + 2;
+		Vector2 pos = transform.position;
+		pos.x -= 1;
 		transform.position = pos;
+
 	}
 
 	void increase_hearts(int amt)

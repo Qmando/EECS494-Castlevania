@@ -10,7 +10,7 @@ public class menu_gui : MonoBehaviour {
 		}
 		if (GUI.Button (new Rect (50, 150, 300, 90), "Play custom level")) {
 			// This code is executed when the Button is clicked
-			print("lol");
+			Application.LoadLevel (3);
 		}
 	
 	}
