@@ -288,19 +288,19 @@ public class Simon : MonoBehaviour {
 		if (.05 > Math.Abs(cur_stairs.pos.x-transform.position.x) || on_stairs) {
 			on_stairs = true;
 			// Walk up onto the stairs a little bit
-			if (cur_stairs.dir == 0 && transform.position.y < cur_stairs.pos.y+.35) {
+			if (on_stair_info.dir == 0 && transform.position.y < on_stair_info.pos.y+.35) {
 				vel.y=2;
 				vel.x=2;
 			}
-			else if (cur_stairs.dir == 1 && transform.position.y > cur_stairs.pos.y-.35) {
+			else if (on_stair_info.dir == 1 && transform.position.y > on_stair_info.pos.y-.35) {
 				vel.y=-2;
 				vel.x=-2;
 			}
-			else if (cur_stairs.dir == 2 && transform.position.y > cur_stairs.pos.y-.35) {
+			else if (on_stair_info.dir == 2 && transform.position.y > on_stair_info.pos.y-.35) {
 				vel.y=-2;
 				vel.x=2;
 			}
-			else if (cur_stairs.dir == 3 && transform.position.y < cur_stairs.pos.y+.35) {
+			else if (on_stair_info.dir == 3 && transform.position.y < on_stair_info.pos.y+.35) {
 				vel.y=2;
 				vel.x=-2;
 			}

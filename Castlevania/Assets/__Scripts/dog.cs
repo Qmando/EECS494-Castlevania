@@ -14,12 +14,16 @@ public class dog : MonoBehaviour {
 	SpriteRenderer sr;
 	public Sprite jump_sprite;
 	public bool dir;
+	public float trigger_dist = 5f;
 	
 	// Use this for initialization
 	void Start () {
 		simon = GameObject.Find ("Simon");
 		float simon_x = simon.transform.position.x;
-		trigger_x = transform.position.x - 5f;
+		if (!dir)
+			trigger_x = transform.position.x - trigger_dist;
+		else
+			trigger_x = transform.position.x + trigger_dist;
 		anim = this.GetComponent<Animator> ();
 		sr = this.GetComponent<SpriteRenderer> ();
 		anim.enabled = false;
@@ -33,13 +37,7 @@ public class dog : MonoBehaviour {
 			anim.SetInteger("direction", 1);
 */
 		Vector2 vel = new Vector2 (0, 0);
-		if (idle && simon.transform.position.x > trigger_x
-		    && transform.position.x > trigger_x) {
-			dir = (transform.position.x > simon.transform.position.x);
-			attack ();
-		}
-		else if (idle && simon.transform.position.x < trigger_x
-		         && transform.position.x < trigger_x) {
+		if (idle && Math.Abs (simon.transform.position.x - trigger_x) < 1) {
 			dir = (transform.position.x > simon.transform.position.x);
 			attack ();
 		}

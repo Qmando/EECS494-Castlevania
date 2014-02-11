@@ -4,6 +4,7 @@ using System.Collections;
 public class ghost : MonoBehaviour {
 	public GameObject simon;
 	public int moving;
+	private Animator animator;
 
 	// Use this for initialization
 	void Start () {
@@ -13,6 +14,7 @@ public class ghost : MonoBehaviour {
 			moving = 4;
 		else
 			moving =-4;
+		animator = this.GetComponent<Animator>();
 			
 	}
 	
@@ -22,9 +24,16 @@ public class ghost : MonoBehaviour {
 		vel.x = moving;
 		rigidbody2D.velocity = vel;
 
+		animator.SetBool ("dir", (moving > 0));
+
 	}
 
 	void die(){
 		Destroy (this.gameObject);
+	}
+
+	void OnTriggerExit2D(Collider2D collided) {
+		if (collided.gameObject.tag == "platform") 
+			moving *= -1;
 	}
 }
