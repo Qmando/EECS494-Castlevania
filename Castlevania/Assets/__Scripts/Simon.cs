@@ -70,7 +70,7 @@ public class Simon : MonoBehaviour {
 			return;
 		}
 
-		else if (Time.time < next_damage-.5) {
+		else if (Time.time < next_damage-1.5) {
 			return;
 		}
 
@@ -453,7 +453,7 @@ public class Simon : MonoBehaviour {
 		// Bounce back if we take damage (but not on stairs!)
 		if (!on_stairs && !gettingOnStairs && !gettingOffStairs) {
 			Vector2 pos = transform.position;
-			Vector2 vel = new Vector2 (0, 2);
+			Vector2 vel = new Vector2 (0, 9);
 			if (obj.transform.position.x > pos.x)
 				vel.x -= 6;
 			else
@@ -481,12 +481,12 @@ public class Simon : MonoBehaviour {
 	List<GameObject> objects_in_whip(bool right){
 		List<GameObject> objs = new List<GameObject> ();
 		Vector2 pos = transform.position;
-		Vector2 size = new Vector2 (2f, 1f);
+		Vector2 size = new Vector2 (2.5f, 2f);
 		Vector2 corner = pos;
 		if (right) 
-			corner = pos + new Vector2(.5f, .6f);
+			corner = pos + new Vector2(0f, 0f);
 		else 
-			corner = pos + new Vector2(-2.5f, .6f);
+			corner = pos + new Vector2(-2.5f, 0f);
 		
 		foreach (GameObject obj in GameObject.FindGameObjectsWithTag("killable")){
 			if (obj.transform.position.x > corner.x 
