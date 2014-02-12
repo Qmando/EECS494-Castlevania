@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class attackbox : MonoBehaviour {
+	/*
 	public GameObject simon;
 	public GameObject thisobj;
 	public bool right;
@@ -20,13 +21,14 @@ public class attackbox : MonoBehaviour {
 	}
 
 	// Because we move the transform every frame, it always triggers as an "enter" action
+	/*
 	void OnTriggerEnter2D(Collider2D collider) {
 		GameObject collided_with = collider.gameObject;
 		
 		if (collided_with.tag == "killable"){
 			//print ("Killing " + collided_with.name);
 			if (!in_trigger.Contains (collided_with.GetInstanceID())) {
-				print ("Adding " + collided_with.name);
+				print ("Adding " + collided_with.name + collided_with.GetInstanceID().ToString ());
 				in_trigger.Add (collided_with.GetInstanceID());
 			}
 		}
@@ -34,24 +36,18 @@ public class attackbox : MonoBehaviour {
 	}
 	void OnTriggerExit2D(Collider2D collider) {
 		GameObject collided_with = collider.gameObject;
-		
+		print ("Left " + collided_with.name + collided_with.GetInstanceID().ToString ());
 		if (collided_with.tag == "killable"){
+
 			if (in_trigger.Contains (collided_with.GetInstanceID())) {
-				print ("Removing " + collided_with.name);
+				print ("Removing " + collided_with.name + collided_with.GetInstanceID().ToString ());
 				in_trigger.Remove (collided_with.GetInstanceID());
 			}
 		}
 	}
+	*/
 
-	void hit_stuff() {
-		foreach (int obj_id in in_trigger) {
-			foreach (GameObject obj in GameObject.FindGameObjectsWithTag("killable")){
-				if (obj.GetInstanceID() == obj_id){
-					print ("Killing " + obj.name);
-					obj.SendMessage("die");
-				}
-			}
-		}
-		in_trigger.Clear ();
-	}
+
+
+
 }
