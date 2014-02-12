@@ -37,7 +37,8 @@ public class dog : MonoBehaviour {
 			anim.SetInteger("direction", 1);
 */
 		Vector2 vel = new Vector2 (0, 0);
-		if (idle && Math.Abs (simon.transform.position.x - trigger_x) < 1) {
+		if (idle && Math.Abs (simon.transform.position.x - trigger_x) < 1
+		    && Math.Abs (simon.transform.position.y - transform.position.y) < 10) {
 			dir = (transform.position.x > simon.transform.position.x);
 			attack ();
 		}
