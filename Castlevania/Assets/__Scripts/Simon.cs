@@ -462,7 +462,8 @@ public class Simon : MonoBehaviour {
 			rigidbody2D.velocity = vel;
 		}
 		// Get knocked off stairs by bombs
-		if (obj.name.Substring (0, 4) == "bomb") {
+		if (if obj.name.Length > 3
+		    && obj.name.Substring (0, 4) == "bomb") {
 			on_stairs = false;
 			animator.SetTrigger ("getoffstairs");
 			rigidbody2D.gravityScale = 4;
@@ -471,10 +472,6 @@ public class Simon : MonoBehaviour {
 			print("Hit by "+obj.name);
 		}
 
-	}
-
-	void increase_health(int amt){
-		health += amt;
 	}
 
 	void increase_hearts(int amt){
