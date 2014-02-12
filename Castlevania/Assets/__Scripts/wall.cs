@@ -3,6 +3,7 @@ using System.Collections;
 
 public class wall : MonoBehaviour {
 	void die(){
-		Destroy (this.gameObject);
+		GetComponent<MeshRenderer>().enabled = true;
+		GetComponent<BoxCollider2D> ().enabled = false;
 	}
 }
