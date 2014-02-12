@@ -463,6 +463,10 @@ public class Simon : MonoBehaviour {
 
 	}
 
+	void increase_health(int amt){
+		health += amt;
+	}
+
 	void increase_hearts(int amt){
 		hearts += amt;
 	}
