@@ -1,0 +1,157 @@
+fileFormatVersion: 2
+guid: acd225e66ed47a44b92b81630bf44ec2
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 24
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: airplane_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 247
+        width: 107
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: airplane_1
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 248
+        width: 107
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: airplane_2
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 233
+        width: 107
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: airplane_3
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 172
+        width: 107
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: airplane_4
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 169
+        width: 107
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: airplane_5
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 171
+        width: 106
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: airplane_6
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 107
+        width: 107
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: airplane_7
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 108
+        width: 107
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: airplane_8
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 93
+        width: 107
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: airplane_9
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 33
+        width: 107
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: airplane_10
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 29
+        width: 107
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: airplane_11
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 32
+        width: 106
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 

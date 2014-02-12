@@ -1,0 +1,130 @@
+fileFormatVersion: 2
+guid: 6189ce891b8106240b351075f05c729c
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: missles_0
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 624
+        width: 243
+        height: 176
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: right_misslea
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 662
+        width: 265
+        height: 138
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: missles_2
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 384
+        width: 265
+        height: 205
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: missles_3
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 290
+        width: 266
+        height: 111
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: down_missle
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 11
+        width: 129
+        height: 265
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: missles_5
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 163
+        width: 144
+        height: 75
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: missles_6
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 31
+        width: 140
+        height: 73
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: right_missleb
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 663
+        width: 265
+        height: 137
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: missle_downb
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 13
+        width: 131
+        height: 264
+      alignment: 0
+      pivot: {x: .5, y: .5}
+  spritePackingTag: 
+  userData: 

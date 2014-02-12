@@ -48,7 +48,8 @@ public class Simon : MonoBehaviour {
 
 	void Update () { // Every Frame
 		// Timed actions
-	
+		whip_hit ();
+
 		if (disable) {
 			Vector2 vel2 = rigidbody2D.velocity;
 			vel2.x = 4;
@@ -77,7 +78,7 @@ public class Simon : MonoBehaviour {
 		input ();
 		updateAnimation ();
 
-		whip_hit ();
+
 
 
 
@@ -460,6 +461,15 @@ public class Simon : MonoBehaviour {
 				vel.x = 6;
 			rigidbody2D.velocity = vel;
 		}
+		// Get knocked off stairs by bombs
+		if (obj.name.Substring (0, 4) == "bomb") {
+			on_stairs = false;
+			animator.SetTrigger ("getoffstairs");
+			rigidbody2D.gravityScale = 4;
+		}
+		else {
+			print("Hit by "+obj.name);
+		}
 
 	}
 
@@ -485,22 +495,33 @@ public class Simon : MonoBehaviour {
 	List<GameObject> objects_in_whip(bool right){
 		List<GameObject> objs = new List<GameObject> ();
 		Vector2 pos = transform.position;
-		Vector2 size = new Vector2 (2.5f, 2f);
-		Vector2 corner = pos;
+		Vector2 size = new Vector2 (2.5f, 1.5f);
+		Vector2 center = pos;
 		if (right) 
-			corner = pos + new Vector2(0f, 0f);
+			center = pos + new Vector2(1f, .3f);
 		else 
-			corner = pos + new Vector2(-2.5f, 0f);
+			center = pos + new Vector2(-1f, .3f);
 		
 		foreach (GameObject obj in GameObject.FindGameObjectsWithTag("killable")){
-			if (obj.transform.position.x > corner.x 
-			    && obj.transform.position.y > corner.y
-			    && obj.transform.position.x < (corner+size).x
-			    && obj.transform.position.y < (corner+size).y){
-				
+			if (within(center, obj.transform.position, size)){
 				objs.Add (obj);
 			}
 		}
 		return objs;
+	}
+
+	void bomb(GameObject bomb){
+		if (Math.Abs (transform.position.x-bomb.transform.position.x) < 1
+		    && Math.Abs (transform.position.y-bomb.transform.position.y) < 1) {
+			take_damage(bomb);
+		}
+	}
+
+	bool within(Vector2 center, Vector2 comp, Vector2 range){
+		if (Math.Abs(center.x-comp.x) < range.x 
+		    && Math.Abs(center.y-comp.y) < range.y) {
+			return true;
+		}
+		return false;
 	}
 }
