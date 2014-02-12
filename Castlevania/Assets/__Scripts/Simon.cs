@@ -48,7 +48,7 @@ public class Simon : MonoBehaviour {
 
 	void Update () { // Every Frame
 		// Timed actions
-		//-------------------------------------------------------------
+	
 		if (disable) {
 			Vector2 vel2 = rigidbody2D.velocity;
 			vel2.x = 4;
@@ -58,17 +58,32 @@ public class Simon : MonoBehaviour {
 			return;
 		}
 
-		if (gettingOnStairs){
+		else if (gettingOnStairs){
 			rigidbody2D.velocity=getOnStairs();
 			updateAnimation ();
 			return;
 		}
 
-		if (gettingOffStairs) {
+		else if (gettingOffStairs) {
 			rigidbody2D.velocity = getOffStairs ();
 			updateAnimation ();
 			return;
 		}
+
+		else if (Time.time < next_damage-.5) {
+			return;
+		}
+
+		input ();
+		updateAnimation ();
+
+		whip_hit ();
+
+
+
+	}
+
+	void updateAnimation(){
 
 		// adjust collider to match crouch sprite
 		// -----------------------------------------------------------
@@ -91,10 +106,52 @@ public class Simon : MonoBehaviour {
 			collider.center = center;
 		}
 
-		// CONTROLS
-		//--------------------------------------------------------------------------
-		float h = Input.GetAxis ("Horizontal");
+		Vector2 vel = rigidbody2D.velocity;
+		if (vel.x == 0 && vel.y == 0) {
+			animator.SetBool ("idle", true);
+		}
+		else {
+			animator.SetBool ("idle", false);
+		}
+		
+		if (vel.x > 0) {
+			animator.SetInteger ("direction_x", 0);
+		} else if (vel.x < 0) {
+			animator.SetInteger ("direction_x", 1);
+		}
 
+		if (vel.y > 0) {
+			animator.SetInteger ("direction_y", 0);
+		} else if (vel.y < 0) {
+			animator.SetInteger ("direction_y", 1);
+		}
+
+		
+		if (Time.time >= whip_end && animator.GetBool ("whipping")) {
+			animator.SetBool ("whipping", false);
+		}
+
+		if (on_stairs) {
+			animator.SetBool ("stairs", true);
+		}
+		else {
+			animator.SetBool("stairs", false);
+		}
+		if (!grounded && on_stairs == false){
+			animator.SetBool ("air", true);
+		}
+		else {
+			animator.SetBool ("air", false);
+		}
+
+		if (gettingOnStairs) {
+			animator.SetBool ("crouch", false);
+		}
+	}
+
+	void input() {
+		float h = Input.GetAxis ("Horizontal");
+		
 		Vector2 vel = rigidbody2D.velocity;
 		if (grounded && !animator.GetBool ("whipping")) {
 			vel.x = h * speed;
@@ -105,7 +162,7 @@ public class Simon : MonoBehaviour {
 				vel.y = jumpSpeed;
 			}
 		}
-
+		
 		if (Input.GetKey (KeyCode.DownArrow) && !gettingOnStairs) {
 			if (grounded) {
 				vel.x = 0;
@@ -115,7 +172,7 @@ public class Simon : MonoBehaviour {
 		else {
 			animator.SetBool ("crouch", false);
 		}
-
+		
 		if (Input.GetKeyDown (KeyCode.X)) {
 			animator.SetBool("whipping", true);
 			whip_end = Time.time + whip_time;
@@ -124,24 +181,26 @@ public class Simon : MonoBehaviour {
 				vel.x = 0;
 			}
 		}
-
+		
 		// Get on stairs if we are close
 		if (Input.GetKeyDown (KeyCode.UpArrow)) {
 			// If we are on the ground by the bottom of a staircase
-			if (cur_stairs.pos.x != 0 
+			if (grounded && cur_stairs.pos.x != 0 
 			    && (cur_stairs.dir == 0 || cur_stairs.dir == 3)
 			    && !on_stairs) {
 				gettingOnStairs = true;
+				on_stair_info = cur_stairs;
 			}
 		}
 		if (Input.GetKeyDown (KeyCode.DownArrow)){
-			if (cur_stairs.pos.x != 0 
+			if (grounded && cur_stairs.pos.x != 0 
 			    && (cur_stairs.dir == 1 || cur_stairs.dir == 2)
 			    && !on_stairs) {
 				gettingOnStairs=true;
+				on_stair_info = cur_stairs;
 			}
 		}
-
+		
 		// Stairs movement
 		if (on_stairs){
 			if (on_stair_info.dir == 0 || on_stair_info.dir == 1) {
@@ -163,7 +222,7 @@ public class Simon : MonoBehaviour {
 					}
 				}
 				else if (Input.GetKey(KeyCode.DownArrow) 
-				    	|| Input.GetKey(KeyCode.LeftArrow)) {
+				         || Input.GetKey(KeyCode.LeftArrow)) {
 					if (cur_stairs.pos.x != 0 && cur_stairs.dir == 0){
 						if (transform.position.y > cur_stairs.pos.y+.2) {
 							vel.x=-2;
@@ -177,7 +236,7 @@ public class Simon : MonoBehaviour {
 						vel.x=-2;
 						vel.y=-2;
 					}
-
+					
 				}
 				else {
 					vel.x=0;
@@ -226,89 +285,31 @@ public class Simon : MonoBehaviour {
 			}
 		}
 		rigidbody2D.velocity = vel;
-
-		updateAnimation ();
-
-		if (animator.GetBool ("whipping") 
-		    && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > .66
-		    && Time.time > whip_end-(whip_time/2)) {
-			if (whip_dir == 0)
-				right_box.SendMessage ("hit_stuff");
-			else
-				left_box.SendMessage ("hit_stuff");
-		}
-
-
-
-	}
-
-	void updateAnimation(){
-		Vector2 vel = rigidbody2D.velocity;
-		if (vel.x == 0 && vel.y == 0) {
-			animator.SetBool ("idle", true);
-		}
-		else {
-			animator.SetBool ("idle", false);
-		}
-		
-		if (vel.x > 0) {
-			animator.SetInteger ("direction_x", 0);
-		} else if (vel.x < 0) {
-			animator.SetInteger ("direction_x", 1);
-		}
-
-		if (vel.y > 0) {
-			animator.SetInteger ("direction_y", 0);
-		} else if (vel.y < 0) {
-			animator.SetInteger ("direction_y", 1);
-		}
-
-		
-		if (Time.time >= whip_end && animator.GetBool ("whipping")) {
-			animator.SetBool ("whipping", false);
-		}
-
-		if (on_stairs) {
-			animator.SetBool ("stairs", true);
-		}
-		else {
-			animator.SetBool("stairs", false);
-		}
-		if (!grounded && on_stairs == false){
-			animator.SetBool ("air", true);
-		}
-		else {
-			animator.SetBool ("air", false);
-		}
-
-		if (gettingOnStairs) {
-			animator.SetBool ("crouch", false);
-		}
 	}
 
 	Vector2 getOnStairs(){
 		Vector2 vel = new Vector2 (0, 0);
 
 		// If we are within a tolerable distance to the center of the stairs
-		if ((.05 > Math.Abs(cur_stairs.pos.x-transform.position.x) && grounded) 
+		if ((.05 > Math.Abs(cur_stairs.pos.x-transform.position.x)) 
 		    				|| on_stairs) {
 			on_stairs = true;
 			rigidbody2D.gravityScale = 0;
 			// Walk up onto the stairs a little bit
-			if (cur_stairs.dir == 0 && cur_stairs.pos.x != 0
-			    && transform.position.y < cur_stairs.pos.y+.35) {
+			if (on_stair_info.dir == 0 && on_stair_info.pos.x != 0
+			    && transform.position.y < on_stair_info.pos.y+.35) {
 				vel.y=2;
 				vel.x=2;
 			}
-			else if (cur_stairs.dir == 1 && transform.position.y > cur_stairs.pos.y-.35) {
+			else if (on_stair_info.dir == 1 && transform.position.y > on_stair_info.pos.y-.35) {
 				vel.y=-2;
 				vel.x=-2;
 			}
-			else if (cur_stairs.dir == 2 && transform.position.y > cur_stairs.pos.y-.35) {
+			else if (on_stair_info.dir == 2 && transform.position.y > on_stair_info.pos.y-.35) {
 				vel.y=-2;
 				vel.x=2;
 			}
-			else if (cur_stairs.dir == 3 && transform.position.y < cur_stairs.pos.y+.35) {
+			else if (on_stair_info.dir == 3 && transform.position.y < on_stair_info.pos.y+.35) {
 				vel.y=2;
 				vel.x=-2;
 			}
@@ -316,10 +317,9 @@ public class Simon : MonoBehaviour {
 				// Get on!
 				vel.y=0;
 				vel.x=0;
-				on_stair_info = cur_stairs;
 
 				gettingOnStairs = false;
-				if (cur_stairs.dir == 0 || cur_stairs.dir == 1) {
+				if (on_stair_info.dir == 0 || on_stair_info.dir == 1) {
 					animator.SetBool("stairdir", false);
 				}
 				else {
@@ -329,7 +329,7 @@ public class Simon : MonoBehaviour {
 			}
 		}
 		
-		else if (transform.position.x > cur_stairs.pos.x) {
+		else if (transform.position.x > on_stair_info.pos.x) {
 			// Walk towards stairs
 			vel.x = -4;
 		}
@@ -387,29 +387,25 @@ public class Simon : MonoBehaviour {
 			grounded = false;
 	}
 
-	void whip_hit_r(GameObject hit_obj){
+	void whip_hit(){
 		// For weird reasons, we check both whether the animation is > 2/3 done
 		// AND check to see we are at least half way through the "whip time"
 		if (animator.GetBool ("whipping") 
 			&& animator.GetCurrentAnimatorStateInfo(0).normalizedTime > .66
 		    && Time.time > whip_end-(whip_time/2)
 		    && whip_dir == 0) { 
-				hit_obj.SendMessage ("die");
+				hit_stuff (true);
 
 		}
-	}
-
-	void whip_hit_l(GameObject hit_obj){
-		// For weird reasons, we check both whether the animation is > 2/3 done
-		// AND check to see we are at least half way through the "whip time"
-		if (animator.GetBool ("whipping") 
+		else if (animator.GetBool ("whipping") 
 		    && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > .66
 		    && Time.time > whip_end-(whip_time/2)
 		    && whip_dir == 1) { 
-				hit_obj.SendMessage ("die");
+			hit_stuff (false);
 			
 		}
 	}
+
 
 	void near_stairs(stair_info info) {
 
@@ -447,16 +443,23 @@ public class Simon : MonoBehaviour {
 			print ("Collided with object in layer " + collided_with.layer.ToString ());
 		if (collided_with.layer == 9) {
 			print ("Starting damage coroutine");
-			take_damage();
+			take_damage(collided_with);
 		}
 	}
 
-	void take_damage(){
+	void take_damage(GameObject obj){
 		health -= 2;
 		next_damage = Time.time + 2;
-		Vector2 pos = transform.position;
-		pos.x -= 1;
-		transform.position = pos;
+		// Bounce back if we take damage (but not on stairs!)
+		if (!on_stairs && !gettingOnStairs && !gettingOffStairs) {
+			Vector2 pos = transform.position;
+			Vector2 vel = new Vector2 (0, 2);
+			if (obj.transform.position.x > pos.x)
+				vel.x -= 6;
+			else
+				vel.x = 6;
+			rigidbody2D.velocity = vel;
+		}
 
 	}
 
@@ -466,5 +469,34 @@ public class Simon : MonoBehaviour {
 
 	void equip_subweapon(GameObject sw){
 		sub_weapon = sw;
+	}
+
+	void hit_stuff(bool right) {
+		foreach (GameObject obj in objects_in_whip(right)){
+			print ("Killing " + obj.name);
+			obj.SendMessage("die");
+		}
+	}
+	
+	List<GameObject> objects_in_whip(bool right){
+		List<GameObject> objs = new List<GameObject> ();
+		Vector2 pos = transform.position;
+		Vector2 size = new Vector2 (2f, 1f);
+		Vector2 corner = pos;
+		if (right) 
+			corner = pos + new Vector2(.5f, .6f);
+		else 
+			corner = pos + new Vector2(-2.5f, .6f);
+		
+		foreach (GameObject obj in GameObject.FindGameObjectsWithTag("killable")){
+			if (obj.transform.position.x > corner.x 
+			    && obj.transform.position.y > corner.y
+			    && obj.transform.position.x < (corner+size).x
+			    && obj.transform.position.y < (corner+size).y){
+				
+				objs.Add (obj);
+			}
+		}
+		return objs;
 	}
 }
