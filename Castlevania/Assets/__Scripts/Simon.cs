@@ -52,6 +52,7 @@ public class Simon : MonoBehaviour {
 		// Timed actions
 		whip_hit ();
 		if (dead) {
+			rigidbody2D.velocity = new Vector2(0, 0);
 			return;
 		}
 		if (disable) {

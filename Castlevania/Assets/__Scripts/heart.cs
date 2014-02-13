@@ -10,7 +10,7 @@ public class heart : MonoBehaviour {
 		simon = GameObject.Find ("Simon");
 	}
 
-	void OnCollisionEnter2D(Collision2D collider){
+	void OnTriggerEnter2D(Collision2D collider){
 		GameObject collided_with = collider.gameObject;
 		print (collided_with.tag);
 		if (collided_with.tag == "Player") {

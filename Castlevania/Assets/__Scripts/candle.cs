@@ -26,7 +26,8 @@ public class candle : MonoBehaviour {
 
 	void die(){
 		//Drop item and self destruct
-		Instantiate (drop, transform.position, Quaternion.identity);
+		if (this.name != "desblock1" && this.name != "desblock2")
+			Instantiate (drop, transform.position, Quaternion.identity);
 		Destroy (this.gameObject);
 	}
 }
