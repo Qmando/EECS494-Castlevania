@@ -4,7 +4,7 @@ using System.Collections;
 public class CameraFollow : MonoBehaviour {
 	public Transform 	poi; // Point of Interest
 	public float		u;
-	public Vector3		offset = new Vector3(0,2,-5);
+	public Vector3		offset = new Vector3(0,5,-5);
 	public bool follow_y;
 	
 	// Update is called once per frame
@@ -13,7 +13,7 @@ public class CameraFollow : MonoBehaviour {
 		Vector3 curpos = transform.position;
 		curpos.x = pos.x;
 		if (follow_y) 
-			curpos.y = pos.y;
+			curpos.y = pos.y+offset.y;
 		transform.position = curpos;
 	}
 }

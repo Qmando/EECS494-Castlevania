@@ -10,8 +10,9 @@ public class Simon : MonoBehaviour {
 
 	public bool		grounded = true;
 	public bool		disable = false;
+	public bool 	dead = false;
 
-	public int			health = 10;
+	public int			health = 18;
 	public int			hearts = 0;
 	public GameObject	sub_weapon;
 
@@ -31,6 +32,7 @@ public class Simon : MonoBehaviour {
 	public List<GameObject> in_trigger;
 	public GameObject right_box;
 	public GameObject left_box;
+	public GameObject health_gui;
 	public float next_damage=0;
 	
 	// Use this for initialization
@@ -49,7 +51,9 @@ public class Simon : MonoBehaviour {
 	void Update () { // Every Frame
 		// Timed actions
 		whip_hit ();
-
+		if (dead) {
+			return;
+		}
 		if (disable) {
 			Vector2 vel2 = rigidbody2D.velocity;
 			vel2.x = 4;
@@ -453,6 +457,11 @@ public class Simon : MonoBehaviour {
 
 	void take_damage(GameObject obj){
 		health -= 2;
+		health_gui.SendMessage ("sethealth", health);
+		if (health <= 0) {
+			die();
+			return;
+		}
 		next_damage = Time.time + 2;
 		// Bounce back if we take damage (but not on stairs!)
 		if (!on_stairs && !gettingOnStairs && !gettingOffStairs) {
@@ -515,8 +524,8 @@ public class Simon : MonoBehaviour {
 	}
 
 	void bomb(GameObject bomb){
-		if (Math.Abs (transform.position.x-bomb.transform.position.x) < 1
-		    && Math.Abs (transform.position.y-bomb.transform.position.y) < 1) {
+		if (Math.Abs (transform.position.x-bomb.transform.position.x) < 2
+		    && Math.Abs (transform.position.y-bomb.transform.position.y) < 2) {
 			take_damage(bomb);
 		}
 	}
@@ -528,4 +537,10 @@ public class Simon : MonoBehaviour {
 		}
 		return false;
 	}
+
+	void die(){
+		dead = true;
+		animator.SetTrigger ("dead");
+	}
+
 }

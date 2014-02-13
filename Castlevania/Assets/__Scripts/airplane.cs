@@ -21,7 +21,7 @@ public class airplane : MonoBehaviour {
 
 		// Drop bomb!
 		if (Time.time > next_bomb) {
-			next_bomb = Time.time + Random.Range (.5f, 1.5f);
+			next_bomb = Time.time + Random.Range (.3f, 1.2f);
 			GameObject bomb;
 			if (Random.Range (0, 3) == 1 && transform.position.x > 25) 
 				bomb = (GameObject) Instantiate(puma_obj);
@@ -33,10 +33,10 @@ public class airplane : MonoBehaviour {
 
 		// Move
 		Vector2 pos = transform.position;
-		pos.x += 9 * Time.deltaTime;
+		pos.x += 14 * Time.deltaTime;
 		//Wrap
-		if (pos.x > 55) {
-			pos.x = -5;
+		if (pos.x > 52) {
+			pos.x = -1;
 		}
 		transform.position = pos;
 
