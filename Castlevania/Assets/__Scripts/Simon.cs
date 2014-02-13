@@ -71,9 +71,11 @@ public class Simon : MonoBehaviour {
 			return;
 		}
 
-		else if (Time.time < next_damage-1.5) {
+		else if (Time.time < next_damage-1.7) {
+			animator.SetTrigger ("hurt");
 			return;
 		}
+
 
 		input ();
 		updateAnimation ();
@@ -85,7 +87,8 @@ public class Simon : MonoBehaviour {
 	}
 
 	void updateAnimation(){
-
+		// If this gets called we arent "hurt"
+		animator.SetTrigger ("unhurt");
 		// adjust collider to match crouch sprite
 		// -----------------------------------------------------------
 		AnimatorStateInfo x = animator.GetCurrentAnimatorStateInfo(0);
@@ -454,15 +457,19 @@ public class Simon : MonoBehaviour {
 		// Bounce back if we take damage (but not on stairs!)
 		if (!on_stairs && !gettingOnStairs && !gettingOffStairs) {
 			Vector2 pos = transform.position;
-			Vector2 vel = new Vector2 (0, 9);
-			if (obj.transform.position.x > pos.x)
-				vel.x -= 6;
-			else
-				vel.x = 6;
+			Vector2 vel = new Vector2 (0, 15);
+			if (obj.transform.position.x > pos.x){
+				vel.x -= 8;
+				animator.SetInteger("direction_x", 0);
+			}
+			else {
+				vel.x = 8;
+				animator.SetInteger("direction_x", 1);
+			}
 			rigidbody2D.velocity = vel;
 		}
 		// Get knocked off stairs by bombs
-		if (if obj.name.Length > 3
+		if (obj.name.Length > 3
 		    && obj.name.Substring (0, 4) == "bomb") {
 			on_stairs = false;
 			animator.SetTrigger ("getoffstairs");
@@ -492,12 +499,12 @@ public class Simon : MonoBehaviour {
 	List<GameObject> objects_in_whip(bool right){
 		List<GameObject> objs = new List<GameObject> ();
 		Vector2 pos = transform.position;
-		Vector2 size = new Vector2 (2.5f, 1.5f);
+		Vector2 size = new Vector2 (2.5f, 1.8f);
 		Vector2 center = pos;
 		if (right) 
-			center = pos + new Vector2(1f, .3f);
+			center = pos + new Vector2(1f, .1f);
 		else 
-			center = pos + new Vector2(-1f, .3f);
+			center = pos + new Vector2(-1f, .1f);
 		
 		foreach (GameObject obj in GameObject.FindGameObjectsWithTag("killable")){
 			if (within(center, obj.transform.position, size)){

@@ -46,5 +46,8 @@ public class bomb : MonoBehaviour {
 		rigidbody2D.velocity = new Vector2 (10, 0);
 		transform.localScale = new Vector3 (.5f, .5f, .5f);
 	}
+
+	void attack_on_fall() {}
+		//nothing
 	
 }
