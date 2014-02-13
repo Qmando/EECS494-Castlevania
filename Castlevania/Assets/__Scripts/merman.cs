@@ -8,6 +8,7 @@ public class merman : MonoBehaviour {
 	public float upward_vel;
 	Object fireball;
 	public GameObject simon;
+	bool right;
 
 	void Start() {
 		upward_vec = new Vector2 (0, upward_vel);
@@ -30,17 +31,23 @@ public class merman : MonoBehaviour {
 
 	void move() {
 		if (!spawning) {
-			if (simon.transform.position.x > transform.position.x)
+			right = simon.transform.position.x > transform.position.x;
+			if (right) {
 				rigidbody2D.velocity = new Vector2 (-2f, 0);
-			else
+			} else {
 				rigidbody2D.velocity = new Vector2 (2f, 0);
+			}
 		}
 	}
 
 	void shoot_fireballs() {
 		if (!spawning) {
 			Vector3 pos = new Vector3(transform.position.x,transform.position.y+1.5f, transform.position.z);
-			GameObject fb = (GameObject)Instantiate (fireball, transform.position, Quaternion.identity);
+			GameObject fb = (GameObject)Instantiate (fireball, pos, Quaternion.identity);
+			if (right == true)
+				fb.rigidbody2D.velocity = new Vector2 (15f,0f);
+			else
+				fb.rigidbody2D.velocity = new Vector2 (-15f,0f);
 		}
 	}
 }
