@@ -50,4 +50,8 @@ public class merman : MonoBehaviour {
 				fb.rigidbody2D.velocity = new Vector2 (-15f,0f);
 		}
 	}
+
+	void die(){
+		Destroy (this.gameObject);
+	}
 }
