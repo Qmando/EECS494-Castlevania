@@ -5,11 +5,13 @@ using System;
 
 public class Simon : MonoBehaviour {
 	public float	speed = 8;
+	public int 		score = 0;
 	public float	jumpSpeed = 25;
 	public float	jumpAcc = 4;
 
 	public bool		grounded = true;
 	public bool		disable = false;
+	public bool 	disable2 = false;
 	public bool 	dead = false;
 
 	public int			health = 18;
@@ -56,10 +58,21 @@ public class Simon : MonoBehaviour {
 			return;
 		}
 		if (disable) {
+
 			Vector2 vel2 = rigidbody2D.velocity;
 			vel2.x = 4;
 			vel2.y = 0;
 			animator.Play ("walk_right");
+			rigidbody2D.velocity = vel2;
+			return;
+		}
+		else if (disable2) {
+			foreach (BoxCollider2D bc in GetComponents<BoxCollider2D>()){
+				Destroy (bc);
+			}
+			Vector2 vel2 = rigidbody2D.velocity;
+			vel2.x = 2;
+			vel2.y = -2;
 			rigidbody2D.velocity = vel2;
 			return;
 		}
@@ -387,6 +400,15 @@ public class Simon : MonoBehaviour {
 		rigidbody2D.velocity = vel;
 	}
 
+	public void next_level2() {
+		this.disable2 = true;
+		Vector2 vel = rigidbody2D.velocity;
+		vel.x = 2;
+		vel.y = -2;
+		animator.Play ("simon_stairs_down_right");
+		rigidbody2D.velocity = vel;
+	}
+
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.tag == "platform")
 			grounded = true;
@@ -459,6 +481,7 @@ public class Simon : MonoBehaviour {
 	void take_damage(GameObject obj){
 		health -= 2;
 		health_gui.SendMessage ("sethealth", health);
+		health_gui.SendMessage ("setscore", score);
 		if (health <= 0) {
 			die();
 			return;
@@ -502,6 +525,7 @@ public class Simon : MonoBehaviour {
 	void hit_stuff(bool right) {
 		foreach (GameObject obj in objects_in_whip(right)){
 			print ("Killing " + obj.name);
+			score += 100;
 			obj.SendMessage("die");
 		}
 	}

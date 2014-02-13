@@ -3,6 +3,7 @@ using System.Collections;
 
 public class ghost : MonoBehaviour {
 	public GameObject simon;
+	public GameObject health;
 	public int moving;
 	private Animator animator;
 

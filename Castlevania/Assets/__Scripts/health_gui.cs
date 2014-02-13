@@ -3,6 +3,7 @@ using System.Collections;
 
 public class health_gui : MonoBehaviour {
 	public int health = 18;
+	public int score = 0;
 	public GameObject simon;
 
 	string genTopText(int score, int time, int stage){
@@ -32,7 +33,7 @@ public class health_gui : MonoBehaviour {
 		// Top line
 		GUI.skin.label.normal.background = black_tex;
 		GUI.skin.label.fontSize = 40;
-		string top_text = genTopText (0, 200, 1);
+		string top_text = genTopText (score, 200, 1);
 		GUI.Label (new Rect (10, 10, Screen.width - 30, 70), top_text);
 		GUI.Label (new Rect (10, 50, Screen.width - 30, 70), "PLAYER");
 
@@ -57,5 +58,9 @@ public class health_gui : MonoBehaviour {
 	}
 	void sethealth(int hp) {
 		health = hp;
+	}
+
+	void setscore(int scor) {
+		score = scor;
 	}
 }
