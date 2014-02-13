@@ -8,4 +8,8 @@ public class fireball : MonoBehaviour {
 		if (with.gameObject.tag == "Player")
 			Destroy (this.gameObject);
 	}
+
+	void die() {
+		Destroy (this.gameObject);
+	}
 }
