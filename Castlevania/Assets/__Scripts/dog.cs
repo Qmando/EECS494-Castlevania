@@ -56,8 +56,11 @@ public class dog : MonoBehaviour {
 			anim.enabled = true;
 			running = true;
 			Vector2 vel = new Vector2(0, 0);
-			if (dir)
+			anim.SetInteger ("direction", 0);
+			if (dir){
 				vel.x = -6;
+				anim.SetInteger ("direction", 1);
+			}
 			else
 				vel.x = 6;
 			rigidbody2D.velocity = vel;
@@ -96,5 +99,9 @@ public class dog : MonoBehaviour {
 	
 	void die(){
 		Destroy (this.gameObject);
+	}
+
+	void attack_on_fall(){
+		idle = false;
 	}
 }

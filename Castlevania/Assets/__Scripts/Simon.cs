@@ -10,8 +10,9 @@ public class Simon : MonoBehaviour {
 
 	public bool		grounded = true;
 	public bool		disable = false;
+	public bool 	dead = false;
 
-	public int			health = 10;
+	public int			health = 18;
 	public int			hearts = 0;
 	public GameObject	sub_weapon;
 
@@ -31,6 +32,7 @@ public class Simon : MonoBehaviour {
 	public List<GameObject> in_trigger;
 	public GameObject right_box;
 	public GameObject left_box;
+	public GameObject health_gui;
 	public float next_damage=0;
 	
 	// Use this for initialization
@@ -49,7 +51,9 @@ public class Simon : MonoBehaviour {
 	void Update () { // Every Frame
 		// Timed actions
 		whip_hit ();
-
+		if (dead) {
+			return;
+		}
 		if (disable) {
 			Vector2 vel2 = rigidbody2D.velocity;
 			vel2.x = 4;
@@ -71,9 +75,11 @@ public class Simon : MonoBehaviour {
 			return;
 		}
 
-		else if (Time.time < next_damage-1.5) {
+		else if (Time.time < next_damage-1.7) {
+			animator.SetTrigger ("hurt");
 			return;
 		}
+
 
 		input ();
 		updateAnimation ();
@@ -85,7 +91,8 @@ public class Simon : MonoBehaviour {
 	}
 
 	void updateAnimation(){
-
+		// If this gets called we arent "hurt"
+		animator.SetTrigger ("unhurt");
 		// adjust collider to match crouch sprite
 		// -----------------------------------------------------------
 		AnimatorStateInfo x = animator.GetCurrentAnimatorStateInfo(0);
@@ -450,15 +457,24 @@ public class Simon : MonoBehaviour {
 
 	void take_damage(GameObject obj){
 		health -= 2;
+		health_gui.SendMessage ("sethealth", health);
+		if (health <= 0) {
+			die();
+			return;
+		}
 		next_damage = Time.time + 2;
 		// Bounce back if we take damage (but not on stairs!)
 		if (!on_stairs && !gettingOnStairs && !gettingOffStairs) {
 			Vector2 pos = transform.position;
-			Vector2 vel = new Vector2 (0, 9);
-			if (obj.transform.position.x > pos.x)
-				vel.x -= 6;
-			else
-				vel.x = 6;
+			Vector2 vel = new Vector2 (0, 15);
+			if (obj.transform.position.x > pos.x){
+				vel.x -= 8;
+				animator.SetInteger("direction_x", 0);
+			}
+			else {
+				vel.x = 8;
+				animator.SetInteger("direction_x", 1);
+			}
 			rigidbody2D.velocity = vel;
 		}
 		// Get knocked off stairs by bombs
@@ -492,12 +508,12 @@ public class Simon : MonoBehaviour {
 	List<GameObject> objects_in_whip(bool right){
 		List<GameObject> objs = new List<GameObject> ();
 		Vector2 pos = transform.position;
-		Vector2 size = new Vector2 (2.5f, 1.5f);
+		Vector2 size = new Vector2 (2.5f, 1.8f);
 		Vector2 center = pos;
 		if (right) 
-			center = pos + new Vector2(1f, .3f);
+			center = pos + new Vector2(1f, .1f);
 		else 
-			center = pos + new Vector2(-1f, .3f);
+			center = pos + new Vector2(-1f, .1f);
 		
 		foreach (GameObject obj in GameObject.FindGameObjectsWithTag("killable")){
 			if (within(center, obj.transform.position, size)){
@@ -508,8 +524,8 @@ public class Simon : MonoBehaviour {
 	}
 
 	void bomb(GameObject bomb){
-		if (Math.Abs (transform.position.x-bomb.transform.position.x) < 1
-		    && Math.Abs (transform.position.y-bomb.transform.position.y) < 1) {
+		if (Math.Abs (transform.position.x-bomb.transform.position.x) < 2
+		    && Math.Abs (transform.position.y-bomb.transform.position.y) < 2) {
 			take_damage(bomb);
 		}
 	}
@@ -521,4 +537,10 @@ public class Simon : MonoBehaviour {
 		}
 		return false;
 	}
+
+	void die(){
+		dead = true;
+		animator.SetTrigger ("dead");
+	}
+
 }

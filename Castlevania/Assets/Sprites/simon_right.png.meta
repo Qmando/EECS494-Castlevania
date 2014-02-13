@@ -981,5 +981,23 @@ TextureImporter:
         height: 6
       alignment: 7
       pivot: {x: .5, y: 0}
+    - name: simon_right_2b
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 573
+        width: 18
+        height: 29
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: simon_right_15b
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 573
+        width: 32
+        height: 12
+      alignment: 7
+      pivot: {x: .5, y: 0}
   spritePackingTag: 
   userData: 
