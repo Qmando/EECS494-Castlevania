@@ -462,7 +462,7 @@ public class Simon : MonoBehaviour {
 			rigidbody2D.velocity = vel;
 		}
 		// Get knocked off stairs by bombs
-		if (if obj.name.Length > 3
+		if (obj.name.Length > 3
 		    && obj.name.Substring (0, 4) == "bomb") {
 			on_stairs = false;
 			animator.SetTrigger ("getoffstairs");
